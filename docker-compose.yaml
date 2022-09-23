@@ -1,0 +1,14 @@
+---
+version: '3.8'
+
+services:
+  runner:
+    image: ubuntu:latest
+    build:
+      context: .
+      args:
+        RUNNER_VERSION: '2.292.0'
+    environment:
+      GH_TOKEN: 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
+      GH_OWNER: selsiofy
+      GH_REPOSITORY: DockerRunner
