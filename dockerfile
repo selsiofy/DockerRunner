@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 ARG RUNNER_VERSION
 
 LABEL Author="swahid"
-LABEL Email="sarahwaheed@brightskiesinc.com"
+LABEL Email="sarah.waheed@brightskiesinc.com"
 LABEL GitHub="https://https://github.com/selsiofy/"
 LABEL BaseImage="ubuntu:20.04"
 LABEL RunnerVersion=${RUNNER_VERSION}
