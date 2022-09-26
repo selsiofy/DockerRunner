@@ -1,0 +1,32 @@
+# test17-2
+name: Docker build
+on: push
+jobs:
+  docker:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build
+        run: |
+          echo '----------------------------------------------------'
+          whoami
+          echo '----------------------------------------------------'
+          pwd
+          echo '----------------------------------------------------'
+          ls -l
+          echo '----------------------------------------------------'
+          chattr -i Dockerfile
+          /kaniko/executor --context "." --dockerfile "Dockerfile" --destination "kanikotest.azurecr.io/kanikotest:latest" --cleanup && mkdir -p /workspace
+          echo '----------------------------------------------------'
+          ls -l
+          echo '----------------------------------------------------'
+          whoami
+          echo '----------------------------------------------------'
+          ls /home/docker/actions-runner/_work/
+          echo '----------------------------------------------------'
+          ls /home/docker/actions-runner/_work/kaniko-build
+          echo '----------------------------------------------------'
+          ls /home/docker/actions-runner/_work/kaniko-build/kaniko-build
+          echo '----------------------------------------------------'
+          rm /home/docker/actions-runner/_work/kaniko-build/kaniko-build/*
+Footer
